@@ -1,0 +1,30 @@
+{
+  "name": "imersaoreact",
+  "version": "1.0.0",
+  "description": "- 🔭 Objetivo de conhecer os fundamentos básicos do React. 👨‍💻\r - 🌱 Venho estudando, HTML5, CSS3, Javacript e com essa oportunidade estarei iniciando meus estudos também no React :atom_symbol: .\r - 📫 Contate-me no email: mackellsud@gmail.com\r - ⚡ Eletrizando os neurônios para mergulhar nessa imersão e aprender um pouco sobre React.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelmdrs/imersaoreact.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelmdrs/imersaoreact/issues"
+  },
+  "homepage": "https://github.com/michaelmdrs/imersaoreact#readme",
+  "dependencies": {
+    "@skynexui/components": "^1.23.7",
+    "next": "^12.0.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
