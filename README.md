@@ -1,7 +1,7 @@
 # Imersao React da Alura 👋
 
 
-### Ops, olá! eu sou o Michael 
+### Fala aê! 
 
 - 🔭 Objetivo de conhecer os fundamentos básicos do React. 👨‍💻
 - 🌱 Venho estudando, HTML5, CSS3, Javacript e com essa oportunidade estarei iniciando meus estudos também no React :atom_symbol: .
