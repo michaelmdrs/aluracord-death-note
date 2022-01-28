@@ -122,8 +122,10 @@ export default function PaginaInicial() {
             >
               {appConfig.name}
             </Text>
-
-            <TextField
+              <input 
+               type="text" value={username} 
+              />
+            {/* {<TextField
               fullWidth
               textFieldColors={{
                 neutral: {
@@ -133,7 +135,7 @@ export default function PaginaInicial() {
                   backgroundColor: appConfig.theme.colors.neutrals[800],
                 },
               }}
-            />
+            />} */}
             <Button
               type="submit"
               label="Entrar"
