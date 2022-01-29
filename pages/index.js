@@ -1,37 +1,7 @@
-import appConfig from "../pages/config.json";
 import { Box, Button, Text, TextField, Image } from "@skynexui/components";
 import React from "react";
-
-function GlobalStyle() {
-  return (
-    <style global jsx>{`
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        list-style: none;
-      }
-      body {
-        font-family: "Open Sans", sans-serif;
-      }
-      /* App fit Height */
-      html,
-      body,
-      #__next {
-        min-height: 100vh;
-        display: flex;
-        flex: 1;
-      }
-      #__next {
-        flex: 1;
-      }
-      #__next > * {
-        flex: 1;
-      }
-      /*./App fit Height */
-    `}</style>
-  );
-}
+import { useRouter } from 'next/router';
+import appConfig from "../pages/config.json";
 
 function Title(props) {
   const Tag = props.tag || 'h1';
@@ -65,11 +35,11 @@ function Title(props) {
 
 export default function PaginaInicial() {
   //const username = "michaelmdrs";
-  const [username, setUsername] = React.useState('');
+  const [username, setUsername] = React.useState(''); //Verifica o estado
+  const roteamento = useRouter();
 
   return (
     <>
-      <GlobalStyle />
       <Box
         styleSheet={{
           display: "flex",
@@ -107,6 +77,8 @@ export default function PaginaInicial() {
             onSubmit = {function(e) {
               e.preventDefault();
               console.log('Alguém submeteu o form')
+              //window.location.href = '/chat';
+              roteamento.push('/chat');
             }}
             styleSheet={{
               display: "flex",
