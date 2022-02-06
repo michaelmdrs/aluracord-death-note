@@ -1,17 +1,19 @@
 import { Box, Text, TextField, Image, Button } from '@skynexui/components';
 import React from 'react';
-import appConfig from '../config.json';
+import appConfig from './config.json';
 
 export default function ChatPage() {
     // Sua lógica vai aqui
+    const [mensagem, setMensagem] = React.useState('');
+    const [listaMensagens, setListaMensagens] = React.useState([]);
 
     // ./Sua lógica vai aqui
     return (
         <Box
             styleSheet={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                backgroundColor: appConfig.theme.colors.primary[500],
-                backgroundImage: `url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)`,
+                backgroundColor: appConfig.theme.colors.primary[900],
+                backgroundImage: `url(https://wallpapercave.com/dwp1x/daM2EML.jpg)`,
                 backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
                 color: appConfig.theme.colors.neutrals['000']
             }}
@@ -44,8 +46,8 @@ export default function ChatPage() {
                     }}
                 >
 
-                    {/* <MessageList mensagens={[]} /> */}
-
+                    {/* <MessageList mensagens={[...]} /> */}
+                   Mensage > {listaMensagens}
                     <Box
                         as="form"
                         styleSheet={{
@@ -54,7 +56,22 @@ export default function ChatPage() {
                         }}
                     >
                         <TextField
-                            placeholder="Insira sua mensagem aqui..."
+                            value={mensagem}
+                            onChange = {(event) => {
+                                const valor = event.target.value;
+                                setMensagem(valor);
+                            }}
+                            onKeyPress={(e) => {
+                                if(e.key === 'Enter') {
+                                    console.log(e)
+                                    setListaMensagens([
+                                        ...listaMensagens,
+                                        mensagem
+                                    ]);
+                                    setMensagem('');
+                                }
+                            }}
+                            placeholder="Digite sua mensagem aqui..."
                             type="textarea"
                             styleSheet={{
                                 width: '100%',
@@ -79,7 +96,7 @@ function Header() {
         <>
             <Box styleSheet={{ width: '100%', marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} >
                 <Text variant='heading5'>
-                    Chat
+                    Anime Chat
                 </Text>
                 <Button
                     variant='tertiary'
@@ -148,7 +165,7 @@ function MessageList(props) {
                         {(new Date().toLocaleDateString())}
                     </Text>
                 </Box>
-                {mensagem.texto}
+                    {mensagem.texto}
             </Text>
         </Box>
     )
